@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dU4-so-dfS">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--SegmentedControl Demo-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SegmentedControllerExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lb-jz-nYE" customClass="SegmentedControl" customModule="SegmentedController">
+                                <rect key="frame" x="0.0" y="164.5" width="375" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="inF-AG-47p"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                        <color key="value" red="0.83529411760000005" green="0.64705882349999999" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedBackgroundViewHeight">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="segmentTitles" value="Item 1,Item 2,Item 3"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2d-Op-hSN" userLabel="NoAnimation" customClass="SegmentedControl" customModule="SegmentedController">
+                                <rect key="frame" x="0.0" y="276.5" width="375" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2Wc-7R-0Jw"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Wur-QA-AqH"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                        <color key="value" red="0.1280207633979342" green="0.51513694678199873" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedBackgroundViewHeight">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="segmentTitles" value="Tab 1,Tab 2,Tab 3"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animationEnabled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedTitleColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thin selected bar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omc-Gn-X6w">
+                                <rect key="frame" x="15" y="15" width="132.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full selected background" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrV-i0-FEr">
+                                <rect key="frame" x="15" y="128.5" width="193.5" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="194" id="Cmv-Ma-iqR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Cmv-Ma-iqR"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCK-nL-xJ3">
+                                <rect key="frame" x="0.0" y="48.5" width="375" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZh-eE-MAj" customClass="SegmentedControl" customModule="SegmentedController">
+                                        <rect key="frame" x="0.0" y="0.0" width="450" height="50"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="KBF-tt-kaP"/>
+                                            <constraint firstAttribute="width" constant="450" id="eJF-wu-7wZ"/>
+                                            <constraint firstAttribute="height" constant="50" id="fk2-qS-7iZ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                                <color key="value" red="0.83529411760000005" green="0.64705882349999999" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="selectedBackgroundViewHeight">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                <color key="value" red="0.83529411760000005" green="0.64705882349999999" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="segmentTitles" value="Item 1,Item 2,Item 3,Item 4, Item 5,Item 6,Item 7"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="fk2-qS-7iZ"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gZh-eE-MAj" secondAttribute="trailing" id="1wM-tG-usW"/>
+                                    <constraint firstItem="gZh-eE-MAj" firstAttribute="leading" secondItem="NCK-nL-xJ3" secondAttribute="leading" id="4o7-e8-BNO"/>
+                                    <constraint firstItem="gZh-eE-MAj" firstAttribute="top" secondItem="NCK-nL-xJ3" secondAttribute="top" id="DzK-6M-vBO"/>
+                                    <constraint firstAttribute="bottom" secondItem="gZh-eE-MAj" secondAttribute="bottom" id="IYs-ES-OTd"/>
+                                    <constraint firstAttribute="height" constant="50" id="lam-Vh-5Hr"/>
+                                </constraints>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No animation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsi-n7-VQn">
+                                <rect key="frame" x="15" y="240" width="102" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="t2d-Op-hSN" secondAttribute="trailing" id="4Jr-I0-Vdb"/>
+                            <constraint firstItem="2lb-jz-nYE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4wX-0V-Ppf"/>
+                            <constraint firstItem="t2d-Op-hSN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8UT-vO-8L7"/>
+                            <constraint firstAttribute="trailing" secondItem="NCK-nL-xJ3" secondAttribute="trailing" id="C9n-jL-feG"/>
+                            <constraint firstItem="NCK-nL-xJ3" firstAttribute="top" secondItem="Omc-Gn-X6w" secondAttribute="bottom" constant="13" id="EsG-HN-h9o"/>
+                            <constraint firstItem="jsi-n7-VQn" firstAttribute="top" secondItem="2lb-jz-nYE" secondAttribute="bottom" constant="26.5" id="TWE-Ad-dFM"/>
+                            <constraint firstAttribute="trailing" secondItem="2lb-jz-nYE" secondAttribute="trailing" id="V4h-uQ-nYO"/>
+                            <constraint firstItem="NCK-nL-xJ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WVD-6c-Bz8"/>
+                            <constraint firstItem="jsi-n7-VQn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="Z2d-X6-jzI"/>
+                            <constraint firstItem="Omc-Gn-X6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="cN6-bE-z9H"/>
+                            <constraint firstItem="ZrV-i0-FEr" firstAttribute="top" secondItem="NCK-nL-xJ3" secondAttribute="bottom" constant="30" id="iSV-QW-9vs"/>
+                            <constraint firstItem="Omc-Gn-X6w" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="jY2-eo-onc"/>
+                            <constraint firstItem="t2d-Op-hSN" firstAttribute="top" secondItem="jsi-n7-VQn" secondAttribute="bottom" constant="15" id="kDZ-ud-Gx6"/>
+                            <constraint firstItem="2lb-jz-nYE" firstAttribute="top" secondItem="ZrV-i0-FEr" secondAttribute="bottom" constant="15" id="v0d-If-pVZ"/>
+                            <constraint firstItem="ZrV-i0-FEr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="vkt-Ix-fq8"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="SegmentedControl Demo" id="3Lo-9c-uHf"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1249.5" y="362.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="edv-9s-Nfy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dU4-so-dfS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rkC-FV-IWf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fFa-cp-69z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yuO-uB-G4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="363"/>
+        </scene>
+    </scenes>
+</document>

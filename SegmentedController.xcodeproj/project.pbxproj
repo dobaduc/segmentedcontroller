@@ -10,6 +10,9 @@
 		C6D98F261B8DDF4D008C22E7 /* SegmentedController.h in Headers */ = {isa = PBXBuildFile; fileRef = C6D98F251B8DDF4D008C22E7 /* SegmentedController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6D98F2C1B8DDF4D008C22E7 /* SegmentedController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D98F201B8DDF4D008C22E7 /* SegmentedController.framework */; };
 		C6D98F331B8DDF4D008C22E7 /* SegmentedControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D98F321B8DDF4D008C22E7 /* SegmentedControllerTests.swift */; };
+		C6D98F6D1B8DE028008C22E7 /* SegmentedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D98F6C1B8DE028008C22E7 /* SegmentedController.swift */; };
+		C6D98F6F1B8DE03F008C22E7 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D98F6E1B8DE03F008C22E7 /* SegmentedControl.swift */; };
+		C6D98F711B8E13F6008C22E7 /* SegmentedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D98F701B8E13F6008C22E7 /* SegmentedViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		C6D98F2B1B8DDF4D008C22E7 /* SegmentedControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SegmentedControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D98F311B8DDF4D008C22E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6D98F321B8DDF4D008C22E7 /* SegmentedControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControllerTests.swift; sourceTree = "<group>"; };
+		C6D98F6C1B8DE028008C22E7 /* SegmentedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedController.swift; sourceTree = "<group>"; };
+		C6D98F6E1B8DE03F008C22E7 /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
+		C6D98F701B8E13F6008C22E7 /* SegmentedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentedViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				C6D98F251B8DDF4D008C22E7 /* SegmentedController.h */,
+				C6D98F6E1B8DE03F008C22E7 /* SegmentedControl.swift */,
+				C6D98F6C1B8DE028008C22E7 /* SegmentedController.swift */,
+				C6D98F701B8E13F6008C22E7 /* SegmentedViewController.xib */,
 				C6D98F231B8DDF4D008C22E7 /* Supporting Files */,
 			);
 			path = SegmentedController;
@@ -192,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D98F711B8E13F6008C22E7 /* SegmentedViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D98F6F1B8DE03F008C22E7 /* SegmentedControl.swift in Sources */,
+				C6D98F6D1B8DE028008C22E7 /* SegmentedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +335,7 @@
 		C6D98F371B8DDF4D008C22E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,12 +345,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		C6D98F381B8DDF4D008C22E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -399,6 +414,7 @@
 				C6D98F381B8DDF4D008C22E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6D98F391B8DDF4D008C22E7 /* Build configuration list for PBXNativeTarget "SegmentedControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +423,7 @@
 				C6D98F3B1B8DDF4D008C22E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

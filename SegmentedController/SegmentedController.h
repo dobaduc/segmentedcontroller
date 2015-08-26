@@ -3,7 +3,7 @@
 //  SegmentedController
 //
 //  Created by Duc DoBa on 8/26/15.
-//  Copyright (c) 2015 Ducky Duke. All rights reserved.
+//  Copyright (c) 2015 Duc Doba. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

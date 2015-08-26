@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C6D98F1F1B8DDF4D008C22E7"
-               BuildableName = "SegmentedController.framework"
-               BlueprintName = "SegmentedController"
-               ReferencedContainer = "container:SegmentedController.xcodeproj">
+               BlueprintIdentifier = "C6D98F441B8DDF92008C22E7"
+               BuildableName = "SegmentedControllerExample.app"
+               BlueprintName = "SegmentedControllerExample"
+               ReferencedContainer = "container:SegmentedControllerExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C6D98F2A1B8DDF4D008C22E7"
-               BuildableName = "SegmentedControllerTests.xctest"
-               BlueprintName = "SegmentedControllerTests"
-               ReferencedContainer = "container:SegmentedController.xcodeproj">
+               BlueprintIdentifier = "C6D98F591B8DDF92008C22E7"
+               BuildableName = "SegmentedControllerExampleTests.xctest"
+               BlueprintName = "SegmentedControllerExampleTests"
+               ReferencedContainer = "container:SegmentedControllerExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C6D98F2A1B8DDF4D008C22E7"
-               BuildableName = "SegmentedControllerTests.xctest"
-               BlueprintName = "SegmentedControllerTests"
-               ReferencedContainer = "container:SegmentedController.xcodeproj">
+               BlueprintIdentifier = "C6D98F591B8DDF92008C22E7"
+               BuildableName = "SegmentedControllerExampleTests.xctest"
+               BlueprintName = "SegmentedControllerExampleTests"
+               ReferencedContainer = "container:SegmentedControllerExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C6D98F1F1B8DDF4D008C22E7"
-            BuildableName = "SegmentedController.framework"
-            BlueprintName = "SegmentedController"
-            ReferencedContainer = "container:SegmentedController.xcodeproj">
+            BlueprintIdentifier = "C6D98F441B8DDF92008C22E7"
+            BuildableName = "SegmentedControllerExample.app"
+            BlueprintName = "SegmentedControllerExample"
+            ReferencedContainer = "container:SegmentedControllerExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -72,15 +72,16 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C6D98F1F1B8DDF4D008C22E7"
-            BuildableName = "SegmentedController.framework"
-            BlueprintName = "SegmentedController"
-            ReferencedContainer = "container:SegmentedController.xcodeproj">
+            BlueprintIdentifier = "C6D98F441B8DDF92008C22E7"
+            BuildableName = "SegmentedControllerExample.app"
+            BlueprintName = "SegmentedControllerExample"
+            ReferencedContainer = "container:SegmentedControllerExample.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,15 +91,16 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C6D98F1F1B8DDF4D008C22E7"
-            BuildableName = "SegmentedController.framework"
-            BlueprintName = "SegmentedController"
-            ReferencedContainer = "container:SegmentedController.xcodeproj">
+            BlueprintIdentifier = "C6D98F441B8DDF92008C22E7"
+            BuildableName = "SegmentedControllerExample.app"
+            BlueprintName = "SegmentedControllerExample"
+            ReferencedContainer = "container:SegmentedControllerExample.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
