@@ -1,6 +1,8 @@
 # Segmented Controller
 Simple &amp; highly customizable segmented control written in Swift
 
+![SegmentedController](SegmentedController/images/SegmentedController.gif)
+
 # Installation
 - Via Carthage
  - Add `github 'dobaduc/segmentedcontroller'` to your Cartfile
