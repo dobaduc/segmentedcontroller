@@ -7,19 +7,42 @@
 //
 
 import UIKit
+import SegmentedController
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var segmentedViewControllerContainer: UIView!
+    
+    var segmentedVC = SegmentedViewController()
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        segmentedViewControllerContainer.addSubview(segmentedVC.view)
+        segmentedVC.view.frame = segmentedViewControllerContainer.bounds
+        
+        segmentedVC.viewControllers = [
+            tableViewVCWithColor(UIColor.redColor(), title: "Red"),
+            tableViewVCWithColor(UIColor.greenColor(), title: "Green"),
+            tableViewVCWithColor(UIColor.blueColor(), title: "Blue")
+        ]
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableViewVCWithColor(color: UIColor, title: String) -> UITableViewController {
+        let tb = UITableViewController(style: .Plain)
+        var frame = segmentedViewControllerContainer.bounds
+        frame.origin.y = segmentedVC.segmentedControl.frame.height
+        frame.size.height = frame.height - segmentedVC.segmentedControl.frame.height
+        tb.tableView.frame = frame
+        
+        tb.tableView.backgroundColor = color
+        tb.title = title
+        
+        return tb
     }
-
-
 }
 

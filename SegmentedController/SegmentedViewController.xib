@@ -4,13 +4,18 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7706"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SegmentedViewController" customModule="SegmentedController" customModuleProvider="target">
+            <connections>
+                <outlet property="segmentedControl" destination="730-al-nQe" id="UF6-M8-mrO"/>
+                <outlet property="view" destination="iN0-l3-epB" id="XP0-ir-zCO"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="730-al-nQe" customClass="SegmentedControl" customModule="SegmentedController" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="730-al-nQe" customClass="SegmentedControl" customModule="SegmentedController">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
@@ -28,7 +33,7 @@
                 <constraint firstItem="730-al-nQe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YmK-eF-rvg"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="298" y="370"/>
+            <point key="canvasLocation" x="348" y="340"/>
         </view>
     </objects>
 </document>

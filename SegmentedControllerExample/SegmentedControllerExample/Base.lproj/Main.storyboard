@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lb-jz-nYE" customClass="SegmentedControl" customModule="SegmentedController">
-                                <rect key="frame" x="0.0" y="164.5" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="146" width="375" height="50"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="inF-AG-47p"/>
@@ -36,7 +36,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2d-Op-hSN" userLabel="NoAnimation" customClass="SegmentedControl" customModule="SegmentedController">
-                                <rect key="frame" x="0.0" y="276.5" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="241" width="375" height="50"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2Wc-7R-0Jw"/>
@@ -69,7 +69,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full selected background" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrV-i0-FEr">
-                                <rect key="frame" x="15" y="128.5" width="193.5" height="20.5"/>
+                                <rect key="frame" x="15" y="115" width="193.5" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="194" id="Cmv-Ma-iqR"/>
                                 </constraints>
@@ -82,8 +82,14 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No animation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsi-n7-VQn">
+                                <rect key="frame" x="15" y="211" width="102" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCK-nL-xJ3">
-                                <rect key="frame" x="0.0" y="48.5" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="45" width="375" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZh-eE-MAj" customClass="SegmentedControl" customModule="SegmentedController">
                                         <rect key="frame" x="0.0" y="0.0" width="450" height="50"/>
@@ -120,8 +126,20 @@
                                     <constraint firstAttribute="height" constant="50" id="lam-Vh-5Hr"/>
                                 </constraints>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No animation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsi-n7-VQn">
-                                <rect key="frame" x="15" y="240" width="102" height="20.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh2-dU-u9M">
+                                <rect key="frame" x="0.0" y="344" width="375" height="259.5"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="vGE-lf-f9L"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="vGE-lf-f9L"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SegmentedViewController" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzV-xh-3Fn">
+                                <rect key="frame" x="15" y="313" width="200" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -129,26 +147,35 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="uh2-dU-u9M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3TJ-lc-lNf"/>
                             <constraint firstAttribute="trailing" secondItem="t2d-Op-hSN" secondAttribute="trailing" id="4Jr-I0-Vdb"/>
                             <constraint firstItem="2lb-jz-nYE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4wX-0V-Ppf"/>
+                            <constraint firstItem="ZzV-xh-3Fn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="86S-KA-44V"/>
                             <constraint firstItem="t2d-Op-hSN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8UT-vO-8L7"/>
                             <constraint firstAttribute="trailing" secondItem="NCK-nL-xJ3" secondAttribute="trailing" id="C9n-jL-feG"/>
-                            <constraint firstItem="NCK-nL-xJ3" firstAttribute="top" secondItem="Omc-Gn-X6w" secondAttribute="bottom" constant="13" id="EsG-HN-h9o"/>
-                            <constraint firstItem="jsi-n7-VQn" firstAttribute="top" secondItem="2lb-jz-nYE" secondAttribute="bottom" constant="26.5" id="TWE-Ad-dFM"/>
+                            <constraint firstItem="NCK-nL-xJ3" firstAttribute="top" secondItem="Omc-Gn-X6w" secondAttribute="bottom" constant="10" id="EsG-HN-h9o"/>
+                            <constraint firstItem="uh2-dU-u9M" firstAttribute="top" secondItem="ZzV-xh-3Fn" secondAttribute="bottom" constant="10" id="Jes-Lu-pFs"/>
+                            <constraint firstAttribute="trailing" secondItem="uh2-dU-u9M" secondAttribute="trailing" id="RrP-f3-bFg"/>
+                            <constraint firstItem="jsi-n7-VQn" firstAttribute="top" secondItem="2lb-jz-nYE" secondAttribute="bottom" constant="15" id="TWE-Ad-dFM"/>
                             <constraint firstAttribute="trailing" secondItem="2lb-jz-nYE" secondAttribute="trailing" id="V4h-uQ-nYO"/>
                             <constraint firstItem="NCK-nL-xJ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WVD-6c-Bz8"/>
                             <constraint firstItem="jsi-n7-VQn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="Z2d-X6-jzI"/>
                             <constraint firstItem="Omc-Gn-X6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="cN6-bE-z9H"/>
-                            <constraint firstItem="ZrV-i0-FEr" firstAttribute="top" secondItem="NCK-nL-xJ3" secondAttribute="bottom" constant="30" id="iSV-QW-9vs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uh2-dU-u9M" secondAttribute="bottom" id="gI9-c2-boy"/>
+                            <constraint firstItem="ZrV-i0-FEr" firstAttribute="top" secondItem="NCK-nL-xJ3" secondAttribute="bottom" constant="20" id="iSV-QW-9vs"/>
                             <constraint firstItem="Omc-Gn-X6w" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="jY2-eo-onc"/>
-                            <constraint firstItem="t2d-Op-hSN" firstAttribute="top" secondItem="jsi-n7-VQn" secondAttribute="bottom" constant="15" id="kDZ-ud-Gx6"/>
-                            <constraint firstItem="2lb-jz-nYE" firstAttribute="top" secondItem="ZrV-i0-FEr" secondAttribute="bottom" constant="15" id="v0d-If-pVZ"/>
+                            <constraint firstItem="t2d-Op-hSN" firstAttribute="top" secondItem="jsi-n7-VQn" secondAttribute="bottom" constant="10" id="kDZ-ud-Gx6"/>
+                            <constraint firstItem="ZzV-xh-3Fn" firstAttribute="top" secondItem="t2d-Op-hSN" secondAttribute="bottom" constant="21.5" id="uvH-Bx-OvI"/>
+                            <constraint firstItem="2lb-jz-nYE" firstAttribute="top" secondItem="ZrV-i0-FEr" secondAttribute="bottom" constant="10" id="v0d-If-pVZ"/>
                             <constraint firstItem="ZrV-i0-FEr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="vkt-Ix-fq8"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="SegmentedControl Demo" id="3Lo-9c-uHf"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="segmentedViewControllerContainer" destination="uh2-dU-u9M" id="mg4-sg-fkc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
