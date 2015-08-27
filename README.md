@@ -1,5 +1,6 @@
 # Segmented Controller
-Simple &amp; highly customizable segmented control written in Swift
+- Simple &amp; highly customizable segmented control written in Swift
+- Designable on the Interface Builder
 
 ![SegmentedController](SegmentedController/images/SegmentedController.gif)
 
@@ -18,4 +19,4 @@ Simple &amp; highly customizable segmented control written in Swift
 - Check out SegmentedControllerExample project for more details
 
 # License
-SegmentedController is released under the MIT license. See LICENSE for details.
+SegmentedController is released under the MIT license. See [LICENSE](LICENSE) for details.
