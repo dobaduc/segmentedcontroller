@@ -6,7 +6,7 @@
 
 # Installation
 - Via Carthage
- - Add `github 'dobaduc/segmentedcontroller'` to your Cartfile
+ - Add `github 'dobaduc/segmentedcontroller'` to your `Cartfile`
  - Run `carthage update`
 
 # Components
