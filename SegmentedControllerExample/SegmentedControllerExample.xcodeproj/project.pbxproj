@@ -160,6 +160,8 @@
 		C6D98F3D1B8DDF92008C22E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Ducky Duke";
 				TargetAttributes = {

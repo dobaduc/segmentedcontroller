@@ -52,7 +52,7 @@ public class SegmentedControl: UIControl {
     
     public let selectedBackgroundView = UIView()
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configureElements()
     }
@@ -70,7 +70,7 @@ public class SegmentedControl: UIControl {
     }
     
     public func segmentTouched(sender: UIButton) {
-        if let index = find(segmentItems, sender) {
+        if let index = segmentItems.indexOf(sender) {
             selectedIndex = index
         }
     }
@@ -85,7 +85,7 @@ private extension SegmentedControl {
     
     func updateSegments(titles: String?) {
         if let titles = titles {
-            let extractedTitles = split(titles, maxSplit: 100, allowEmptySlices: false, isSeparator: { $0 == "," })
+            let extractedTitles = titles.characters.split(100, allowEmptySlices: false, isSeparator: { $0 == "," }).map { String($0) }
             segments = extractedTitles.map({ $0 })
             return
         }
@@ -99,7 +99,7 @@ private extension SegmentedControl {
         // Reset data
         if segments.count > 0 {
             let itemWidth: CGFloat = frame.width / CGFloat(segments.count)
-            for (index, segment) in enumerate(segments) {
+            for (index, segment) in segments.enumerate() {
                 let item = UIButton(frame: CGRect(
                     x: itemWidth * CGFloat(index),
                     y: 0,
@@ -123,7 +123,7 @@ private extension SegmentedControl {
     func updateSegmentFrames() {
         if segments.count > 0 {
             let itemWidth: CGFloat = frame.width / CGFloat(segmentItems.count)
-            for (index, item) in enumerate(segmentItems) {
+            for (index, item) in segmentItems.enumerate() {
                 item.frame = CGRect(
                     x: itemWidth * CGFloat(index),
                     y: 0,

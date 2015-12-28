@@ -14,8 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var segmentedViewControllerContainer: UIView!
     
     var segmentedVC = SegmentedViewController()
-    
-    required init(coder aDecoder: NSCoder) {
+    var didLayoutSubviews: Bool = false
+
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -34,15 +35,24 @@ class ViewController: UIViewController {
 
     func tableViewVCWithColor(color: UIColor, title: String) -> UITableViewController {
         let tb = UITableViewController(style: .Plain)
-        var frame = segmentedViewControllerContainer.bounds
-        frame.origin.y = segmentedVC.segmentedControl.frame.height
-        frame.size.height = frame.height - segmentedVC.segmentedControl.frame.height
-        tb.tableView.frame = frame
-        
         tb.tableView.backgroundColor = color
         tb.title = title
         
         return tb
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if (!didLayoutSubviews) {
+            for tb in segmentedVC.viewControllers {
+                if let tb = tb as? UITableViewController {
+                    var frame = segmentedViewControllerContainer.bounds
+                    frame.origin.y = segmentedVC.segmentedControl.frame.height
+                    frame.size.height = frame.height - segmentedVC.segmentedControl.frame.height
+                    tb.tableView.frame = frame
+                }
+            }
+        }
     }
 }
 
