@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         segmentedViewControllerContainer.addSubview(segmentedVC.view)
         segmentedVC.view.frame = segmentedViewControllerContainer.bounds
         
@@ -31,6 +31,11 @@ class ViewController: UIViewController {
             tableViewVCWithColor(UIColor.greenColor(), title: "Green"),
             tableViewVCWithColor(UIColor.blueColor(), title: "Blue")
         ]
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        segmentedVC.segmentedControl.selectedBackgroundColor = UIColor.orangeColor()
     }
 
     func tableViewVCWithColor(color: UIColor, title: String) -> UITableViewController {

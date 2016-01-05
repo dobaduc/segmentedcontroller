@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                =  "SegmentedController"
-  s.version             =  "0.1.0"
+  s.version             =  "0.1.1"
   s.summary             =  "Segmented controller component"
   s.description         =  "Simple yet highly customizable segmented controller component written in Swift"
   s.homepage            =  "https://github.com/dobaduc/segmentedcontroller"

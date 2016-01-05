@@ -9,11 +9,7 @@
 import UIKit
 
 public class SegmentedViewController: UIViewController {
-    @IBOutlet public weak var segmentedControl: SegmentedControl! {
-        didSet {
-            segmentedControl.selectedBackgroundColor = UIColor.redColor()
-        }
-    }
+    @IBOutlet public weak var segmentedControl: SegmentedControl!
 
     public var viewControllers: [UIViewController] = [] {
         didSet {
