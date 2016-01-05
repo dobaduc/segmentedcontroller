@@ -8,6 +8,11 @@
 - Via Carthage
  - Add `github 'dobaduc/segmentedcontroller'` to your `Cartfile`
  - Run `carthage update`
+- Via Cocoapods
+
+```
+pod 'SegmentedController'
+```
 
 # Components
 - SegmentedControl
