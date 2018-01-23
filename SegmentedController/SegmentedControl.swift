@@ -50,7 +50,7 @@ public class SegmentedControl: UIControl {
                 selectedIndex = segments.count - 1
             }
             if selectedIndex < segmentItems.count {
-                updateSelectedIndex()
+                updateSelectedIndex(animated: true)
             }
         }
     }
@@ -73,7 +73,7 @@ public class SegmentedControl: UIControl {
         super.layoutSubviews()
         
         updateSegmentFrames()
-        updateSelectedIndex()
+        updateSelectedIndex(animated: false)
     }
     
     @objc public func segmentTouched(sender: UIButton) {
@@ -124,7 +124,7 @@ private extension SegmentedControl {
         }
         
         updateTitleStyle()
-        updateSelectedIndex()
+        updateSelectedIndex(animated: false)
     }
     
     func updateSegmentFrames() {
@@ -150,39 +150,45 @@ private extension SegmentedControl {
         }
     }
     
-    func updateSelectedIndex() {
+    func updateSelectedIndex(animated: Bool) {
         for item in segmentItems {
             item.isSelected = false
             
-            switch animationType {
-            case .bounce, .fade, .slide:
-                item.fadeTransition(0.2)
-            case .none:
-                break
+            if animated {
+                switch animationType {
+                case .bounce, .fade, .slide:
+                    item.fadeTransition(0.2)
+                case .none:
+                    break
+                }
             }
         }
         
         self.segmentItems[self.selectedIndex].isSelected = true
         self.sendActions(for: .valueChanged)
         
-        switch animationType {
-        case .bounce:
-            UIView.animate(withDuration: 0.3,
-                           delay: 0,
-                           usingSpringWithDamping: 0.7,
-                           initialSpringVelocity: 0.3,
-                           options: UIViewAnimationOptions.curveEaseOut,
-                           animations: {
-                            self.updateSelectedBackgroundFrame()
-            }, completion: nil)
-        case .fade:
-            self.fadeTransition(0.2)
-            self.updateSelectedBackgroundFrame()
-        case .slide:
-            UIView.animate(withDuration: 0.1, animations: {
+        if animated {
+            switch animationType {
+            case .bounce:
+                UIView.animate(withDuration: 0.3,
+                               delay: 0,
+                               usingSpringWithDamping: 0.7,
+                               initialSpringVelocity: 0.3,
+                               options: UIViewAnimationOptions.curveEaseOut,
+                               animations: {
+                                self.updateSelectedBackgroundFrame()
+                }, completion: nil)
+            case .fade:
+                self.fadeTransition(0.2)
                 self.updateSelectedBackgroundFrame()
-            })
-        case .none:
+            case .slide:
+                UIView.animate(withDuration: 0.1, animations: {
+                    self.updateSelectedBackgroundFrame()
+                })
+            case .none:
+                self.updateSelectedBackgroundFrame()
+            }
+        } else {
             self.updateSelectedBackgroundFrame()
         }
     }
