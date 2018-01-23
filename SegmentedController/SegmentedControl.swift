@@ -146,6 +146,7 @@ private extension SegmentedControl {
             item.setTitleColor(titleColor, for: .normal)
             item.setTitleColor(highlightedTitleColor, for: .highlighted)
             item.setTitleColor(selectedTitleColor, for: .selected)
+            item.setTitleColor(selectedTitleColor, for: .disabled)
             item.titleLabel?.font = titleFont
         }
     }
