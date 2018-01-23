@@ -8,6 +8,13 @@
 
 import UIKit
 
+public enum AnimationType {
+    case bounce
+    case fade
+    case slide
+    case none
+}
+
 @IBDesignable
 public class SegmentedControl: UIControl {
     // Background
@@ -43,12 +50,12 @@ public class SegmentedControl: UIControl {
                 selectedIndex = segments.count - 1
             }
             if selectedIndex < segmentItems.count {
-                updateSelectedIndex(animated: animationEnabled)
+                updateSelectedIndex()
             }
         }
     }
     
-    @IBInspectable public var animationEnabled: Bool = true
+    public var animationType: AnimationType = .bounce
     
     public let selectedBackgroundView = UIView()
     
@@ -66,7 +73,7 @@ public class SegmentedControl: UIControl {
         super.layoutSubviews()
         
         updateSegmentFrames()
-        updateSelectedIndex(animated: false)
+        updateSelectedIndex()
     }
     
     @objc public func segmentTouched(sender: UIButton) {
@@ -117,7 +124,7 @@ private extension SegmentedControl {
         }
         
         updateTitleStyle()
-        updateSelectedIndex(animated: false)
+        updateSelectedIndex()
     }
     
     func updateSegmentFrames() {
@@ -143,26 +150,40 @@ private extension SegmentedControl {
         }
     }
     
-    func updateSelectedIndex(animated: Bool) {
+    func updateSelectedIndex() {
         for item in segmentItems {
             item.isSelected = false
+            
+            switch animationType {
+            case .bounce, .fade, .slide:
+                item.fadeTransition(0.2)
+            case .none:
+                break
+            }
         }
-        if animated {
+        
+        self.segmentItems[self.selectedIndex].isSelected = true
+        self.sendActions(for: .valueChanged)
+        
+        switch animationType {
+        case .bounce:
             UIView.animate(withDuration: 0.3,
-                delay: 0,
-                usingSpringWithDamping: 0.7,
-                initialSpringVelocity: 0.3,
-                options: UIViewAnimationOptions.curveEaseOut,
-                animations: {
-                    self.updateSelectedBackgroundFrame()
-                }, completion: { finished in
-                    self.segmentItems[self.selectedIndex].isSelected = true
-                    self.sendActions(for: .valueChanged)
+                           delay: 0,
+                           usingSpringWithDamping: 0.7,
+                           initialSpringVelocity: 0.3,
+                           options: UIViewAnimationOptions.curveEaseOut,
+                           animations: {
+                            self.updateSelectedBackgroundFrame()
+            }, completion: nil)
+        case .fade:
+            self.fadeTransition(0.2)
+            self.updateSelectedBackgroundFrame()
+        case .slide:
+            UIView.animate(withDuration: 0.1, animations: {
+                self.updateSelectedBackgroundFrame()
             })
-        } else {
-            updateSelectedBackgroundFrame()
-            segmentItems[selectedIndex].isSelected = true
-            sendActions(for: .valueChanged)
+        case .none:
+            self.updateSelectedBackgroundFrame()
         }
     }
     
@@ -196,5 +217,16 @@ extension String: SegmentTitleProvider {
 extension UIViewController: SegmentTitleProvider {
     public func segmentTitle() -> String {
         return title ?? ""
+    }
+}
+
+extension UIView {
+    func fadeTransition(_ duration:CFTimeInterval) {
+        let animation = CATransition()
+        animation.timingFunction = CAMediaTimingFunction(name:
+            kCAMediaTimingFunctionEaseInEaseOut)
+        animation.type = kCATransitionFade
+        animation.duration = duration
+        layer.add(animation, forKey: kCATransitionFade)
     }
 }
