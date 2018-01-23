@@ -27,19 +27,19 @@ class ViewController: UIViewController {
         segmentedVC.view.frame = segmentedViewControllerContainer.bounds
         
         segmentedVC.viewControllers = [
-            tableViewVCWithColor(UIColor.redColor(), title: "Red"),
-            tableViewVCWithColor(UIColor.greenColor(), title: "Green"),
-            tableViewVCWithColor(UIColor.blueColor(), title: "Blue")
+            tableViewVCWithColor(color: UIColor.red, title: "Red"),
+            tableViewVCWithColor(color: UIColor.green, title: "Green"),
+            tableViewVCWithColor(color: UIColor.blue, title: "Blue")
         ]
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        segmentedVC.segmentedControl.selectedBackgroundColor = UIColor.orangeColor()
+        segmentedVC.segmentedControl.selectedBackgroundColor = UIColor.orange
     }
 
     func tableViewVCWithColor(color: UIColor, title: String) -> UITableViewController {
-        let tb = UITableViewController(style: .Plain)
+        let tb = UITableViewController(style: .plain)
         tb.tableView.backgroundColor = color
         tb.title = title
         

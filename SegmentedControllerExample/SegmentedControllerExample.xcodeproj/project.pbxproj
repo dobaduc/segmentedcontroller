@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26423432201770AB006B3C23 /* SegmentedController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26423433201770AB006B3C23 /* SegmentedController.framework */; };
+		26423436201771A5006B3C23 /* SegmentedController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26423433201770AB006B3C23 /* SegmentedController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C6D98F4B1B8DDF92008C22E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D98F4A1B8DDF92008C22E7 /* AppDelegate.swift */; };
 		C6D98F4D1B8DDF92008C22E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D98F4C1B8DDF92008C22E7 /* ViewController.swift */; };
 		C6D98F501B8DDF92008C22E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6D98F4E1B8DDF92008C22E7 /* Main.storyboard */; };
 		C6D98F521B8DDF92008C22E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6D98F511B8DDF92008C22E7 /* Images.xcassets */; };
 		C6D98F551B8DDF92008C22E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D98F531B8DDF92008C22E7 /* LaunchScreen.xib */; };
 		C6D98F611B8DDF92008C22E7 /* SegmentedControllerExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D98F601B8DDF92008C22E7 /* SegmentedControllerExampleTests.swift */; };
-		C6D98F6B1B8DE007008C22E7 /* SegmentedController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D98F6A1B8DE007008C22E7 /* SegmentedController.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,7 +27,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		26423437201771A6006B3C23 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				26423436201771A5006B3C23 /* SegmentedController.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		26423433201770AB006B3C23 /* SegmentedController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SegmentedController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D98F451B8DDF92008C22E7 /* SegmentedControllerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SegmentedControllerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D98F491B8DDF92008C22E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6D98F4A1B8DDF92008C22E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +53,6 @@
 		C6D98F5A1B8DDF92008C22E7 /* SegmentedControllerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SegmentedControllerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D98F5F1B8DDF92008C22E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6D98F601B8DDF92008C22E7 /* SegmentedControllerExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControllerExampleTests.swift; sourceTree = "<group>"; };
-		C6D98F6A1B8DE007008C22E7 /* SegmentedController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SegmentedController.framework; path = "../build/Debug-iphoneos/SegmentedController.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6D98F6B1B8DE007008C22E7 /* SegmentedController.framework in Frameworks */,
+				26423432201770AB006B3C23 /* SegmentedController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,13 +74,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26423431201770AB006B3C23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26423433201770AB006B3C23 /* SegmentedController.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C6D98F3C1B8DDF92008C22E7 = {
 			isa = PBXGroup;
 			children = (
-				C6D98F6A1B8DE007008C22E7 /* SegmentedController.framework */,
 				C6D98F471B8DDF92008C22E7 /* SegmentedControllerExample */,
 				C6D98F5D1B8DDF92008C22E7 /* SegmentedControllerExampleTests */,
 				C6D98F461B8DDF92008C22E7 /* Products */,
+				26423431201770AB006B3C23 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +149,7 @@
 				C6D98F411B8DDF92008C22E7 /* Sources */,
 				C6D98F421B8DDF92008C22E7 /* Frameworks */,
 				C6D98F431B8DDF92008C22E7 /* Resources */,
+				26423437201771A6006B3C23 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,11 +186,12 @@
 			attributes = {
 				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Ducky Duke";
 				TargetAttributes = {
 					C6D98F441B8DDF92008C22E7 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = Z3UM9FW8JQ;
 					};
 					C6D98F591B8DDF92008C22E7 = {
 						CreatedOnToolsVersion = 6.4;
@@ -269,19 +294,28 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -302,6 +336,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -314,13 +349,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -339,6 +382,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -347,28 +392,36 @@
 		C6D98F651B8DDF92008C22E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z3UM9FW8JQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/doba/workspace/ios/SegmentedController/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = SegmentedControllerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ducky.duke.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		C6D98F661B8DDF92008C22E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z3UM9FW8JQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/doba/workspace/ios/SegmentedController/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = SegmentedControllerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ducky.duke.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -386,7 +439,9 @@
 				);
 				INFOPLIST_FILE = SegmentedControllerExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ducky.duke.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SegmentedControllerExample.app/SegmentedControllerExample";
 			};
 			name = Debug;
@@ -401,7 +456,9 @@
 				);
 				INFOPLIST_FILE = SegmentedControllerExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ducky.duke.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SegmentedControllerExample.app/SegmentedControllerExample";
 			};
 			name = Release;

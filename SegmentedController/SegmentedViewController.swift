@@ -22,7 +22,7 @@ public class SegmentedViewController: UIViewController {
     }
     
     public init() {
-        super.init(nibName: "SegmentedViewController", bundle: NSBundle(forClass: SegmentedViewController.self))
+        super.init(nibName: "SegmentedViewController", bundle: Bundle(for: SegmentedViewController.self))
     }
     
     public override func viewDidLoad() {
@@ -30,12 +30,12 @@ public class SegmentedViewController: UIViewController {
         configure()
     }
     
-    public func didChangeSelectedIndex(sender: SegmentedControl) {
-        showChildViewController(viewControllers[segmentedControl.selectedIndex])
+    @objc public func didChangeSelectedIndex(sender: SegmentedControl) {
+        showChildViewController(viewController: viewControllers[segmentedControl.selectedIndex])
     }
     
     func configure() {
-        segmentedControl.addTarget(self, action: "didChangeSelectedIndex:", forControlEvents: .ValueChanged)
+        segmentedControl.addTarget(self, action: #selector(self.didChangeSelectedIndex(sender:)), for: .valueChanged)
     }
 }
 
@@ -43,33 +43,33 @@ public extension SegmentedViewController {
     public func showChildViewController(viewController: UIViewController) {
         addChildViewController(viewController)
         view.addSubview(viewController.view)
-        viewController.didMoveToParentViewController(self)
+        viewController.didMove(toParentViewController: self)
     }
 
     public func hideChildViewController(viewController: UIViewController) {
-        viewController.willMoveToParentViewController(self)
+        viewController.willMove(toParentViewController: self)
         viewController.view.removeFromSuperview()
         viewController.removeFromParentViewController()
     }
 
     public func switchViewControllers(from: UIViewController, to: UIViewController) {
-        from.willMoveToParentViewController(self)
+        from.willMove(toParentViewController: self)
         
         // Alpha only by default
         addChildViewController(to)
         to.view.alpha = 0
         
-        transitionFromViewController(
-            from,
-            toViewController: to,
+        transition(
+            from: from,
+            to: to,
             duration: 0.3,
-            options: .CurveEaseOut,
+            options: .curveEaseOut,
             animations: {
                 to.view.alpha = 1
                 from.view.alpha = 0
         }) { finished in
             from.removeFromParentViewController()
-            to.didMoveToParentViewController(self)
+            to.didMove(toParentViewController: self)
         }
     }
 }

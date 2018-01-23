@@ -15,22 +15,22 @@ public class SegmentedControl: UIControl {
     var selectedBackgroundViewHeight: CGFloat = 0 { didSet { updateSelectedBackgroundFrame() } }
     
     @IBInspectable public
-    var selectedBackgroundColor: UIColor = UIColor.darkGrayColor() { didSet { updateSelectedBackgroundColor() } }
+    var selectedBackgroundColor: UIColor = UIColor.darkGray { didSet { updateSelectedBackgroundColor() } }
     
     // Title
     @IBInspectable public
-    var titleFont: UIFont = UIFont.boldSystemFontOfSize(12) { didSet { updateTitleStyle() } }
+    var titleFont: UIFont = UIFont.boldSystemFont(ofSize: 12) { didSet { updateTitleStyle() } }
     @IBInspectable public
-    var titleColor: UIColor = UIColor.darkGrayColor() { didSet { updateTitleStyle() } }
+    var titleColor: UIColor = UIColor.darkGray { didSet { updateTitleStyle() } }
     @IBInspectable public
-    var highlightedTitleColor: UIColor = UIColor.yellowColor() { didSet { updateTitleStyle() } }
+    var highlightedTitleColor: UIColor = UIColor.yellow { didSet { updateTitleStyle() } }
     @IBInspectable public
-    var selectedTitleColor: UIColor = UIColor.whiteColor() { didSet { updateTitleStyle() } }
+    var selectedTitleColor: UIColor = UIColor.white { didSet { updateTitleStyle() } }
     
     // Segment
     @IBInspectable public
-    var segmentTitles: String = "" { didSet { updateSegments(segmentTitles) } }
-    public var segments: [SegmentTitleProvider] = ["Title 1", "Title 2"] { didSet { updateSegments(nil) } }
+    var segmentTitles: String = "" { didSet { updateSegments(titles: segmentTitles) } }
+    public var segments: [SegmentTitleProvider] = ["Title 1", "Title 2"] { didSet { updateSegments(titles: nil) } }
     public private(set) var segmentItems: [UIButton] = []
     
     // Selected
@@ -43,7 +43,7 @@ public class SegmentedControl: UIControl {
                 selectedIndex = segments.count - 1
             }
             if selectedIndex < segmentItems.count {
-                updateSelectedIndex(animationEnabled)
+                updateSelectedIndex(animated: animationEnabled)
             }
         }
     }
@@ -66,11 +66,11 @@ public class SegmentedControl: UIControl {
         super.layoutSubviews()
         
         updateSegmentFrames()
-        updateSelectedIndex(false)
+        updateSelectedIndex(animated: false)
     }
     
-    public func segmentTouched(sender: UIButton) {
-        if let index = segmentItems.indexOf(sender) {
+    @objc public func segmentTouched(sender: UIButton) {
+        if let index = segmentItems.index(of: sender) {
             selectedIndex = index
         }
     }
@@ -79,13 +79,13 @@ public class SegmentedControl: UIControl {
 // MARK:- Private methods
 private extension SegmentedControl {
     func configureElements() {
-        insertSubview(selectedBackgroundView, atIndex: 0)
-        updateSegments(nil)
+        insertSubview(selectedBackgroundView, at: 0)
+        updateSegments(titles: nil)
     }
     
     func updateSegments(titles: String?) {
         if let titles = titles {
-            let extractedTitles = titles.characters.split(100, allowEmptySlices: false, isSeparator: { $0 == "," }).map { String($0) }
+            let extractedTitles = titles.split(separator: ",").map { String($0) }
             segments = extractedTitles.map({ $0 })
             return
         }
@@ -94,12 +94,12 @@ private extension SegmentedControl {
         for segmentItem in segmentItems {
             segmentItem.removeFromSuperview()
         }
-        segmentItems.removeAll(keepCapacity: true)
+        segmentItems.removeAll(keepingCapacity: true)
         
         // Reset data
         if segments.count > 0 {
             let itemWidth: CGFloat = frame.width / CGFloat(segments.count)
-            for (index, segment) in segments.enumerate() {
+            for (index, segment) in segments.enumerated() {
                 let item = UIButton(frame: CGRect(
                     x: itemWidth * CGFloat(index),
                     y: 0,
@@ -107,9 +107,9 @@ private extension SegmentedControl {
                     height: frame.height
                 ))
 
-                item.selected = (index == selectedIndex)
-                item.setTitle(segment.segmentTitle(), forState: .Normal)
-                item.addTarget(self, action: "segmentTouched:", forControlEvents: UIControlEvents.TouchUpInside)
+                item.isSelected = (index == selectedIndex)
+                item.setTitle(segment.segmentTitle(), for: .normal)
+                item.addTarget(self, action: #selector(self.segmentTouched(sender:)), for: UIControlEvents.touchUpInside)
 
                 addSubview(item)
                 segmentItems.append(item)
@@ -117,13 +117,13 @@ private extension SegmentedControl {
         }
         
         updateTitleStyle()
-        updateSelectedIndex(false)
+        updateSelectedIndex(animated: false)
     }
     
     func updateSegmentFrames() {
         if segments.count > 0 {
             let itemWidth: CGFloat = frame.width / CGFloat(segmentItems.count)
-            for (index, item) in segmentItems.enumerate() {
+            for (index, item) in segmentItems.enumerated() {
                 item.frame = CGRect(
                     x: itemWidth * CGFloat(index),
                     y: 0,
@@ -136,33 +136,33 @@ private extension SegmentedControl {
     
     func updateTitleStyle() {
         for item in segmentItems {
-            item.setTitleColor(titleColor, forState: .Normal)
-            item.setTitleColor(highlightedTitleColor, forState: .Highlighted)
-            item.setTitleColor(selectedTitleColor, forState: .Selected)
+            item.setTitleColor(titleColor, for: .normal)
+            item.setTitleColor(highlightedTitleColor, for: .highlighted)
+            item.setTitleColor(selectedTitleColor, for: .selected)
             item.titleLabel?.font = titleFont
         }
     }
     
     func updateSelectedIndex(animated: Bool) {
         for item in segmentItems {
-            item.selected = false
+            item.isSelected = false
         }
         if animated {
-            UIView.animateWithDuration(0.3,
+            UIView.animate(withDuration: 0.3,
                 delay: 0,
                 usingSpringWithDamping: 0.7,
                 initialSpringVelocity: 0.3,
-                options: UIViewAnimationOptions.CurveEaseOut,
+                options: UIViewAnimationOptions.curveEaseOut,
                 animations: {
                     self.updateSelectedBackgroundFrame()
                 }, completion: { finished in
-                    self.segmentItems[self.selectedIndex].selected = true
-                    self.sendActionsForControlEvents(.ValueChanged)
+                    self.segmentItems[self.selectedIndex].isSelected = true
+                    self.sendActions(for: .valueChanged)
             })
         } else {
             updateSelectedBackgroundFrame()
-            segmentItems[selectedIndex].selected = true
-            sendActionsForControlEvents(.ValueChanged)
+            segmentItems[selectedIndex].isSelected = true
+            sendActions(for: .valueChanged)
         }
     }
     
