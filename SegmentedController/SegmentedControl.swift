@@ -175,7 +175,7 @@ private extension SegmentedControl {
                                delay: 0,
                                usingSpringWithDamping: 0.7,
                                initialSpringVelocity: 0.3,
-                               options: UIViewAnimationOptions.curveEaseOut,
+                               options: UIViewAnimationOptions.curveEaseInOut,
                                animations: {
                                 self.updateSelectedBackgroundFrame()
                 }, completion: nil)
@@ -183,7 +183,7 @@ private extension SegmentedControl {
                 self.fadeTransition(0.2)
                 self.updateSelectedBackgroundFrame()
             case .slide:
-                UIView.animate(withDuration: 0.1, animations: {
+                UIView.animate(withDuration: 0.1, delay: 0.0, options: [.curveEaseInOut], animations: {
                     self.updateSelectedBackgroundFrame()
                 })
             case .none:
