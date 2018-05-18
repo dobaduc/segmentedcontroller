@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.description         =  "Simple yet highly customizable segmented controller component written in Swift"
   s.homepage            =  "https://github.com/dobaduc/segmentedcontroller"
   s.license             =  { :type => 'MIT' }
-  s.authors             =  { "Duc Doba" => "dobaduc@gmail.com" }
+  s.authors             =  { "Duc Doba" => "---@gmail.com" }
   s.source              =  {
                              :git => "https://github.com/dobaduc/segmentedcontroller.git",
                              :tag => "#{s.version}"
