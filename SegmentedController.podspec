@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                =  "SegmentedController"
-  s.version             =  "0.1.1"
+  s.version             =  "0.2.0"
   s.summary             =  "Segmented controller component"
   s.description         =  "Simple yet highly customizable segmented controller component written in Swift"
   s.homepage            =  "https://github.com/dobaduc/segmentedcontroller"
@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
                            }
   s.source_files        = ["SegmentedController/**/*.{swift,h,xib}"]
   s.requires_arc        = true
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
 end
