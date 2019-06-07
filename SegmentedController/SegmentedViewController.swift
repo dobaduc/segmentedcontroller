@@ -41,22 +41,22 @@ public class SegmentedViewController: UIViewController {
 
 public extension SegmentedViewController {
     public func showChildViewController(viewController: UIViewController) {
-        addChildViewController(viewController)
+        addChild(viewController)
         view.addSubview(viewController.view)
-        viewController.didMove(toParentViewController: self)
+        viewController.didMove(toParent: self)
     }
 
     public func hideChildViewController(viewController: UIViewController) {
-        viewController.willMove(toParentViewController: self)
+        viewController.willMove(toParent: self)
         viewController.view.removeFromSuperview()
-        viewController.removeFromParentViewController()
+        viewController.removeFromParent()
     }
 
     public func switchViewControllers(from: UIViewController, to: UIViewController) {
-        from.willMove(toParentViewController: self)
+        from.willMove(toParent: self)
         
         // Alpha only by default
-        addChildViewController(to)
+        addChild(to)
         to.view.alpha = 0
         
         transition(
@@ -68,8 +68,8 @@ public extension SegmentedViewController {
                 to.view.alpha = 1
                 from.view.alpha = 0
         }) { finished in
-            from.removeFromParentViewController()
-            to.didMove(toParentViewController: self)
+            from.removeFromParent()
+            to.didMove(toParent: self)
         }
     }
 }
