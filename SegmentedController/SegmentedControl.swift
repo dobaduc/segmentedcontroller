@@ -116,7 +116,7 @@ private extension SegmentedControl {
 
                 item.isSelected = (index == selectedIndex)
                 item.setTitle(segment.segmentTitle(), for: .normal)
-                item.addTarget(self, action: #selector(self.segmentTouched(sender:)), for: UIControlEvents.touchUpInside)
+                item.addTarget(self, action: #selector(self.segmentTouched(sender:)), for: UIControl.Event.touchUpInside)
 
                 addSubview(item)
                 segmentItems.append(item)
@@ -175,7 +175,7 @@ private extension SegmentedControl {
                                delay: 0,
                                usingSpringWithDamping: 0.7,
                                initialSpringVelocity: 0.3,
-                               options: UIViewAnimationOptions.curveEaseInOut,
+                               options: UIView.AnimationOptions.curveEaseInOut,
                                animations: {
                                 self.updateSelectedBackgroundFrame()
                 }, completion: nil)
@@ -231,9 +231,9 @@ extension UIView {
     func fadeTransition(_ duration:CFTimeInterval) {
         let animation = CATransition()
         animation.timingFunction = CAMediaTimingFunction(name:
-            kCAMediaTimingFunctionEaseInEaseOut)
-        animation.type = kCATransitionFade
+            CAMediaTimingFunctionName.easeInEaseOut)
+        animation.type = CATransitionType.fade
         animation.duration = duration
-        layer.add(animation, forKey: kCATransitionFade)
+        layer.add(animation, forKey: CATransitionType.fade.rawValue)
     }
 }
